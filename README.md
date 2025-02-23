@@ -1,91 +1,61 @@
-# AI/Machine Learning Intern Challenge: Simple Content-Based Recommendation
-
-**Deadline**: Sunday, Feb 23th 11:59 pm PST
-
----
+# Content-Based Book Recommendation System
 
 ## Overview
+This project is a **content-based recommendation system** that suggests relevant books or movies based on a user's input description. It leverages **text similarity** techniques, utilizing **TF-IDF** and **FastEmbed** to compute the similarity between the user's query and dataset items.
 
-Build a **content-based recommendation system** that, given a **short text description** of a user’s preferences, suggests **similar items** (e.g., movies) from a small dataset. This challenge should take about **3 hours**, so keep your solution **simple** yet **functional**.
-
-### Example Use Case
-
-- The user inputs:  
-  *"I love thrilling action movies set in space, with a comedic twist."*  
-- Your system processes this description (query) and compares it to a dataset of items (e.g., movies with their plot summaries or keywords).  
-- You then return the **top 3–5 “closest” matches** to the user.
-
----
-
-## Requirements
-
-1. **Dataset**  
-   - Use a **small** public dataset of items (e.g., a list of movies with plot summaries, or other textual descriptions).  
-   - Make sure the dataset is easy to handle (maybe 100–500 rows) so the solution remains quick to implement and run.  
-   - Include the dataset in your forked repository *or* provide instructions/link on how to download it.  
-
-2. **Approach**  
-   - **Content-Based**: At a minimum, use text similarity to recommend items.  
-     - For instance, you can transform both the user’s text input and each item’s description into TF-IDF vectors and compute **cosine similarity**.  
-   - Return the **top N** similar items (e.g., top 5).
-
-3. **Code Organization**  
-   - You may use a **Jupyter Notebook** or **Python scripts**.  
-   - Keep it **readable** and **modular** (e.g., one section for loading data, one for building vectors, one for computing similarity, etc.).  
-   - Briefly comment or docstring your key functions/sections.
-
-4. **Output**  
-   - When given an input description (e.g., `"I like action movies set in space"`), your system should print or return a list of recommended items (e.g., 3–5 titles).  
-   - Include the similarity score or rank if you’d like.
-
-5. **Summary & Instructions**  
-   - A short `README.md` that includes:
-     - **Dataset**: Where it’s from, any steps to load it.  
-     - **Setup**: Python version, virtual environment instructions, and how to install dependencies (`pip install -r requirements.txt`).  
-     - **Running**: How to run your code (e.g., `python recommend.py "Some user description"` or open your notebook in Jupyter).  
-     - **Results**: A brief example of your system’s output for a sample query.
+**Key Features:**
+- Supports **TF-IDF** and **FastEmbed** models for text embedding.
+- Uses **cosine similarity** to rank recommendations.
+- Works with **a small dataset** (100–500 items) for quick execution.
+- **Command-line interface** (CLI) for easy interaction.
+- **Modular design** for extensibility (e.g., different datasets, hybrid models).
 
 ---
 
-## Deliverables
+## Dataset
+The dataset (`data.csv`) contains a list of **movies/books with their title, author, genres, and description**.
+- **`title`** → Name of the book/movie.
+- **`author`** → Author or director.
+- **`generes`** → Genres associated with the item.
+- **`description`** → Brief description or plot summary.
 
-1. **Fork the Public Repository**  
-   - **Fork** this repo into your own GitHub account.
+## Setup and Run code
 
-2. **Implement Your Solution**  
-   - Load and preprocess your dataset (e.g., read CSV, handle text columns).  
-   - Convert text data to vectors (e.g., TF-IDF).  
-   - Implement a function to compute similarity between the user’s query and each item’s description.  
-   - Return the top matches.
-   - Salary expectation per month (Mandatory)
+### **1. Clone the Repository**
+```bash
+git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
+cd REPO_NAME
+```
+### **2. Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+### **3.Run the Recommendation System**
+```bash
+python app.py 
+```
 
-3. **Short Video Demo**  
-   - In a `.md` file (e.g., `demo.md`) within your fork, paste a link to a **brief screen recording** (video link).  
-   - Demonstrate:
-     - How you run the recommendation code.  
-     - A sample query and the results.
+## Expected Results:
+```yaml
+Enter your query or type 'exit' to close the app: I love detective book that are thriller and mysterious.
+Choose model (tfidf/fastembed): tfidf
 
-4. **Deadline**  
-   - Submit your fork by **Sunday, Feb 23th 11:59 pm PST**.
+- Find Me: A Novel by André Aciman | Genre: Fiction , LGBT , Gay | Similarity Score: 0.1255
+- Once Missed (A Riley Paige Mystery—Book 16) by Blake Pierce | Genre: Fiction , Mystery &amp, Detective , Women Sleuths | Similarity Score: 0.1175
+- Watching (The Making of Riley Paige—Book 1) by Blake Pierce | Genre: Fiction , Mystery &amp, Detective , Women Sleuths | Similarity Score: 0.1144
+- And Then There Were None by Agatha Christie | Genre: Fiction , Mystery &amp, Detective , Cozy , General | Similarity Score: 0.1095
+- Blood Runs Cold: A completely unputdownable mystery and suspense thriller by Dylan Young | Genre: Fiction , Mystery &amp, Detective , Police Procedural | Similarity Score: 0.1047
+```
 
-> **Note**: This should be doable within ~3 hours. Keep it **straightforward**—you do **not** need advanced neural networks or complex pipelines. A simple TF-IDF + cosine similarity approach is sufficient.
+## Project structure:
+```bash
+/your_repo/
+│── app.py                 # Main script
+│── data.csv               # Dataset
+│── requirements.txt        # Dependencies
+│── README.md               # Documentation
+│── demo.md                 # Demo video link
+```
 
----
-
-## Evaluation Criteria
-
-1. **Functionality**  
-   - Does your code run without errors?  
-   - When given an input query, does it successfully output relevant items?
-
-2. **Code Quality**  
-   - Clear, commented code (where it counts).  
-   - Logical steps (load data → transform → recommend).
-
-3. **Clarity**  
-   - Is your `README.md` straightforward about setup, how to run, and what to expect?
-
-4. **ML/Recommendation Understanding**  
-   - Basic implementation of a content-based recommendation approach (vectorization, similarity measure).
-
-**We look forward to seeing your solution!** Good luck!
+## Salary Expectation
+- Expected Monthly Salary: $XXXX (Replace with your amount)
