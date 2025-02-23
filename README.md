@@ -58,4 +58,4 @@ Choose model (tfidf/fastembed): tfidf
 ```
 
 ## Salary Expectation
-- Expected Monthly Salary: $XXXX (Replace with your amount)
+- Expected Monthly Salary: $3000 
